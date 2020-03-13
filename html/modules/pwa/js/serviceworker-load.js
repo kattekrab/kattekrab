@@ -1,47 +1,17 @@
-(function(drupalSettings) {
-  if (!("serviceWorker" in navigator)) {
-    return;
-  }
+"use strict";
 
-  const documentElement = document.documentElement;
-  const width = documentElement.clientWidth;
-  const height = documentElement.clientHeight;
+(function (Drupal, drupalSettings, navigator, window) {
+  'use strict';
 
-  function loadPage(url) {
-    let iframe = document.createElement("iframe");
-    // When loaded remove from page.
-    iframe.addEventListener("load", event => {
-      iframe.remove();
-      iframe = null;
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register("/serviceworker-pwa", {
+        scope: drupalSettings.path.baseUrl
+      }).then(function (registration) {
+        console.log("Service Worker registered! Scope: ".concat(registration.scope));
+      }).catch(function (err) {
+        console.log("Service Worker registration failed: ".concat(err));
+      });
     });
-    iframe.setAttribute("width", width);
-    iframe.setAttribute("height", height);
-    iframe.setAttribute("style", "position:absolute;top:-110%;left:-110%;");
-    iframe.setAttribute("src", url);
-    document.body.appendChild(iframe);
   }
-
-  navigator.serviceWorker
-    .register("/serviceworker-pwa", { scope: "/" })
-    .then(registration => {
-      // Only add default pages to cache if the SW is being installed.
-      if (registration.installing) {
-        // open the pages to cache in an iframe because assets are not
-        // predictable.
-        drupalSettings.pwa.precache.forEach(loadPage);
-      }
-    });
-
-  // Reload page when user is back online on a fallback offline page.
-  window.addEventListener("online", function() {
-    const loc = window.location;
-    // If the page served is the offline fallback, try a refresh when user
-    // get back online.
-    if (
-      loc.pathname !== "/offline" &&
-      document.querySelector("[data-drupal-pwa-offline]")
-    ) {
-      loc.reload();
-    }
-  });
-})(drupalSettings);
+})(Drupal, drupalSettings, navigator, window);

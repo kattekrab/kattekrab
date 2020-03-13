@@ -1,6 +1,5 @@
 {
     "name": "cc/kattekrab",
-        "npm-asset/select2": "^4.0",
     "description": "Donnas Drupal Blog",
     "type": "project",
     "license": "GPL-2.0-or-later",
@@ -56,33 +55,13 @@
     "bin-dir": "vendor/bin/",
         "sort-packages": true
     },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
     "extra": {
-    "enable-patching": false,
+    "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
         },
         "patches-file": "composer.patches.json",
-        "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
             "html/core": ["type:drupal-core"],
             "html/libraries/{$name}": [
@@ -90,9 +69,9 @@
                 "type:bower-asset",
                 "type:npm-asset"
             ],
-            "html/modules/contrib/{$name}": ["type:drupal-module"],
-            "html/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "html/themes/contrib/{$name}": ["type:drupal-theme"],
+            "html/modules/{$name}": ["type:drupal-module"],
+            "html/profiles/{$name}": ["type:drupal-profile"],
+            "html/themes/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {

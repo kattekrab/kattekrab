@@ -3,4 +3,5 @@ serviceworker:
   js:
     js/serviceworker-load.js: {}
   dependencies:
+    - core/drupal
     - core/drupalSettings

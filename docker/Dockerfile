@@ -2,7 +2,9 @@ FROM unocha/php7-k8s:7.3.14-r0-202003-02 as builder
 
 COPY . /srv/www
 WORKDIR /srv/www
-RUN cp -a docker/settings.php docker/services.yml html/sites/default
+RUN rm -rf ./vendor && \
+    composer install --no-dev && \
+    cp -a docker/settings.php docker/services.yml html/sites/default
 
 FROM unocha/php7-k8s:7.3.14-r0-202003-02
 
@@ -27,4 +29,5 @@ LABEL net.kattekrab.build.date=$BUILD_DATE \
       net.kattekrab.build.vcs-ref=$VCS_REF
 
 COPY --from=builder /srv/www/html /srv/www/html/
+COPY --from=builder /srv/www/vendor /srv/www/vendor/
 COPY --from=builder /srv/www/docker/fastcgi_drupal.conf /etc/nginx/apps/drupal/fastcgi_drupal.conf

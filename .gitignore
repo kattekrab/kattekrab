@@ -1,1 +1,8 @@
+# Drupal stuff.
 html/sites/default
+
+# Composer stuff.
+vendor
+
+# Docker stuff.
+buildlog.txt
