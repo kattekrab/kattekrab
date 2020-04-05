@@ -1,5 +1,7 @@
 FROM unocha/php7-k8s:7.3.14-r0-202003-02 as builder
 
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
 COPY . /srv/www
 WORKDIR /srv/www
 RUN rm -rf ./vendor && \
