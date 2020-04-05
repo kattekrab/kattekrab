@@ -1,5 +1,7 @@
 # Drupal stuff.
 html/sites/default
+html/modules/coder
+html/modules/devel
 
 # Composer stuff.
 vendor
