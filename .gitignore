@@ -1,0 +1,10 @@
+# Drupal stuff.
+html/
+!html/modules/custom
+!html/themes/custom
+
+# Composer stuff.
+vendor
+
+# Docker stuff.
+buildlog.txt
