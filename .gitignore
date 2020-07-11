@@ -1,7 +1,8 @@
 # Drupal stuff.
-html/
-!html/modules/custom
-!html/themes/custom
+html/core
+html/modules/contrib
+html/themes/contrib
+html/sites/default
 
 # Composer stuff.
 vendor
