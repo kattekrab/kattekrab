@@ -1,6 +1,9 @@
 {
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.0.4"
+    },
     "php": {
-        "version": "7.2"
+        "version": "7.3"
     },
     "symfony/flex": {
         "version": "1.0",
