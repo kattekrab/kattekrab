@@ -44,7 +44,7 @@
     },
     "require-dev": {
         "drupal/coder": "^8.3",
-        "drupal/devel": "^2.1",
+        "drupal/devel": "^4.0",
         "phpmd/phpmd": "^2.6",
         "weitzman/drupal-test-traits": "^1.2",
         "weitzman/logintrait": "^1.1"
