@@ -6,6 +6,7 @@ COPY . /srv/www
 WORKDIR /srv/www
 RUN rm -rf ./vendor && \
     composer install --no-dev && \
+    mkdir -p -m 0755 html/sites/default && \
     cp -a docker/settings.php docker/services.yml html/sites/default
 
 FROM unocha/php7-k8s:7.3.18-r0-202005-01
