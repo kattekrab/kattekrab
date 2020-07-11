@@ -8,3 +8,20 @@ vendor
 
 # Docker stuff.
 buildlog.txt
+
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+# DotEnv
+/.env*
+/bin
+/config
+/tests
+/translations

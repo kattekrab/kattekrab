@@ -37,7 +37,6 @@
         "symfony/finder": "^3.4",
         "symfony/flex": "^1.6",
         "typo3/phar-stream-wrapper": "^3.1",
-        "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
