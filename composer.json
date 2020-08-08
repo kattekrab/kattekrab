@@ -30,23 +30,12 @@
         "drupal/pwa": "^1.4",
         "drupal/token": "^1.7",
         "drush/drush": "^10.0.0",
-        "egulias/email-validator": "^2.1",
-        "oomphinc/composer-installers-extender": "^1.1",
-        "symfony/event-dispatcher": "4.3.4 as 3.4.99",
-        "symfony/filesystem": "^3.4",
-        "symfony/finder": "^3.4",
-        "symfony/flex": "^1.6",
-        "typo3/phar-stream-wrapper": "^3.1",
-        "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
-        "zaporylie/composer-drupal-optimizations": "^1.0"
+        "oomphinc/composer-installers-extender": "^1.1"
     },
     "require-dev": {
         "drupal/coder": "^8.3",
         "drupal/devel": "^4.0",
-        "phpmd/phpmd": "^2.6",
-        "weitzman/drupal-test-traits": "^1.2",
-        "weitzman/logintrait": "^1.1"
+        "phpmd/phpmd": "^2.6"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -57,8 +46,17 @@
     "bin-dir": "vendor/bin/",
         "sort-packages": true
     },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-install-cmd": [
+            "@drupal-scaffold"
+        ],
+        "post-update-cmd": [
+            "@drupal-scaffold"
+        ]
+    }
     "extra": {
-    "enable-patching": true,
+        "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
@@ -78,6 +76,8 @@
         },
         "drupal-scaffold": {
             "initial": {
+                "sites/default/default.services.yml": "sites/default/services.yml",
+                "sites/default/default.settings.php": "sites/default/settings.php",
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
