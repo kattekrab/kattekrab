@@ -1,4 +1,4 @@
-FROM unocha/php7-k8s:7.3.18-r0-202005-01 as builder
+FROM unocha/php7-k8s:7.3-develop as builder
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
@@ -9,7 +9,7 @@ RUN rm -rf ./vendor && \
     mkdir -p -m 0755 html/sites/default && \
     cp -a docker/settings.php docker/services.yml html/sites/default
 
-FROM unocha/php7-k8s:7.3.18-r0-202005-01
+FROM unocha/php7-k8s:7.3-develop
 
 ARG VCS_REF
 ARG VCS_URL
