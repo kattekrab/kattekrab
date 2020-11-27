@@ -5,6 +5,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 COPY . /srv/www
 WORKDIR /srv/www
 RUN rm -rf ./vendor && \
+    composer self-update --1 && \
     composer install --no-dev && \
     mkdir -p -m 0755 html/sites/default && \
     cp -a docker/settings.php docker/services.yml html/sites/default
