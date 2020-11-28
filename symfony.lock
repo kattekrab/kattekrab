@@ -310,6 +310,9 @@
     "sebastian/version": {
         "version": "3.0.1"
     },
+    "sirbrillig/phpcs-variable-analysis": {
+        "version": "v2.9.0"
+    },
     "squizlabs/php_codesniffer": {
         "version": "3.0",
         "recipe": {
