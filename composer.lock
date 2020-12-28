@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffe2285b120513c11bb9e381909f2fca",
+    "content-hash": "bab8adbeeca8ba7126e4a55a468a8c49",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1388,16 +1388,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.0.9",
+            "version": "9.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "03d815cf785654d03cf39dd911c8ae53b2fdd6cd"
+                "reference": "8a0cdab9f6a0e2f48b4886b31d050dca034e6049"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/03d815cf785654d03cf39dd911c8ae53b2fdd6cd",
-                "reference": "03d815cf785654d03cf39dd911c8ae53b2fdd6cd",
+                "url": "https://api.github.com/repos/drupal/core/zipball/8a0cdab9f6a0e2f48b4886b31d050dca034e6049",
+                "reference": "8a0cdab9f6a0e2f48b4886b31d050dca034e6049",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1424,7 @@
                 "laminas/laminas-feed": "^2.12",
                 "masterminds/html5": "^2.1",
                 "pear/archive_tar": "^1.4.11",
-                "php": ">=7.3",
+                "php": "^7.3",
                 "psr/log": "^1.0",
                 "stack/builder": "^1.0",
                 "symfony-cmf/routing": "^2.1",
@@ -1631,7 +1631,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2020-11-26T00:53:25+00:00"
+            "time": "2020-12-03T20:54:37+00:00"
         },
         {
             "name": "drupal/ctools",
