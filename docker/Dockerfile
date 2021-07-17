@@ -1,17 +1,19 @@
-FROM unocha/php7-k8s:7.3-develop as builder
+FROM unocha/php-k8s:7.4-develop as builder
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 COPY . /srv/www
 WORKDIR /srv/www
-RUN apk add -U patch && \
+RUN apk add -U --no-cache patch && \
     rm -rf ./vendor && \
     composer self-update --1 && \
     composer install --no-dev && \
     mkdir -p -m 0755 html/sites/default && \
     cp -a docker/settings.php docker/services.yml html/sites/default
 
-FROM unocha/php7-k8s:7.3-develop
+FROM unocha/php-k8s:7.4-develop
+
+RUN apk add -U --no-cache php7-pecl-uploadprogress
 
 ARG VCS_REF
 ARG VCS_URL
