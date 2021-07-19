@@ -6,7 +6,7 @@ COPY . /srv/www
 WORKDIR /srv/www
 RUN apk add -U --no-cache patch && \
     rm -rf ./vendor && \
-    composer self-update --1 && \
+    composer self-update && \
     composer install --no-dev && \
     mkdir -p -m 0755 html/sites/default && \
     cp -a docker/settings.php docker/services.yml html/sites/default
