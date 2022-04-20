@@ -173,9 +173,6 @@
     "laminas/laminas-stdlib": {
         "version": "3.2.1"
     },
-    "laminas/laminas-zendframework-bridge": {
-        "version": "1.0.4"
-    },
     "league/container": {
         "version": "2.4.1"
     },
