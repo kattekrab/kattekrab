@@ -13,7 +13,7 @@ RUN apk add -U --no-cache patch && \
 
 FROM public.ecr.aws/unocha/php-k8s:8.0-stable
 
-RUN apk add -U --no-cache php7-pecl-uploadprogress
+RUN apk add -U --no-cache php8-pecl-uploadprogress
 
 ARG VCS_REF
 ARG VCS_URL
